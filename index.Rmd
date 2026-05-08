@@ -245,7 +245,7 @@ No processo de formação do hidreto metálico, inicialmente o hidrogênio é ad
 
 Existem outras rotas de liberação do $H_2$ gasoso, como por exemplo a reação entre o hidreto e a água (hidrólise), porém é bem específica, sendo utilizada para o borohidreto de sódio ($NaBH_4$). Essa rota pode ocorrer em temperatura ambiente, porém o hidreto só pode ser utilizado uma única vez. A Figura \@ref(fig:figura10) mostra um desenho esquemático da formação de hidreto metálico.
 
-```{r figura10, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap="Absorção e Dessorção de H₂ na formação de hidreto metálico. Fonte: [46]."}
+```{r figura10, echo=FALSE, message=FALSE, warning=FALSE, out.width="50%", fig.align='center', fig.cap="Absorção e Dessorção de H₂ na formação de hidreto metálico. Fonte: [46]."}
 
 knitr::include_graphics(path = 'figura10.png')
 
@@ -297,7 +297,82 @@ knitr::include_graphics(path = 'figura11.png')
 
 ```
 
+#### Amônia
 
+A amônia ($NH_3$) é um composto químico inorgânico formado por um átomo de nitrogênio e três átomos de hidrogênio. Ela tem sido produzida em larga escala há mais de um século, principalmente para a indústria de fertilizantes, através do processo Haber-Bosch, que combina nitrogênio atmosférico e hidrogênio sob alta pressão e temperatura \@ref(eq:equacao5). A reação é realizada em temperaturas entre 350 oC e 500 oC e pressões entre 200 e 350 bar, na presença de catalisador. É um processo muito bem estabelecido e plantas de produção de amônia podem ser facilmente adaptadas para utilizar hidrogênio verde [1].
+
+\begin{equation}
+N_2 + 3H_2 \rightarrow 2NH_3 + \text{calor}
+(\#eq:equacao5)
+\end{equation}
+
+A amônia desempenha um papel crucial como transportador de hidrogênio, especialmente para o transporte e armazenamento de grandes volumes de hidrogênio por longas distâncias. Além de transportador de hidrogênio, pode ser utilizada como combustível para motores à combustão, em algumas células de combustível e como matéria prima para a indústria de fertilizantes verdes [53, 54].
+
+A principal razão para a utilização da amônia como armazenamento de hidrogênio é a sua facilidade de liquefação e alta densidade volumétrica de hidrogênio. A amônia liquida tem uma alta capacidade de armazenamento de hidrogênio, 17,7% em peso o que equivale a 121 Kg/m3 de hidrogênio armazenado. Enquanto o hidrogênio puro requer condições extremas (alta pressão ou temperaturas criogênicas) para ser armazenado e transportado eficientemente, a amônia pode ser armazenada e transportada em temperatura ambiente. Isso permite que a amônia utilize a infraestrutura existente para combustíveis líquidos e gases liquefeitos, como navios-tanque, dutos e terminais, reduzindo significativamente os custos de capital e operacionais associados à logística do hidrogênio [55, 56]. 
+
+Considerando que é possível produzir amônia, a partir do hidrogênio verde (obtido pela eletrólise da água), sem mudanças significativas no processo, o maior desafio é o processo de desidrogenação. A maneira mais comum para se obter o hidrogênio é através da decomposição da amônia, em altas temperaturas e na presença de catalisadores \@ref(eq:equacao6):
+
+\begin{equation}
+2NH_3 \rightarrow N_2 + 3H_2 \qquad (Ni,\ T = 900\,^{\circ}C)
+(\#eq:equacao6)
+\end{equation}
+
+O processo de desidrogenação da amônia ocorre através da adsorção da amônia na superfície do catalisador, onde as ligações $N$-$H$ são quebradas e ocorre a dessorção recombinativa do $N$ e do $H$ para formar as moléculas gasosas de $N_2$ e $H_2$, sendo este o processo que determina a velocidade de decomposição. Neste contexto, vários catalisadores são aplicados na decomposição da amônia, tais como $Ru$ (Rutênio), $Ni$ (Níquel), $Co$ (Cobalto), $Fe$ (Ferro), $Pt$ (Platina) e $Pd$ (Paládio). Entre eles, o Ru é o catalisador mais promissor, o qual  pode diminuir a temperatura do processo, porém aumenta significativamente o custo final. Os demais catalisadores são menos eficientes e necessitam de temperaturas mais elevadas para a conversão completa da amônia em hidrogênio [55, 56].
+
+#### Metanol
+
+O metanol ($CH_3OH$), também tem um grande potencial para armazenar e transportar hidrogênio, sendo uma boa opção  de entrega de hidrogênio em termos de quantidade final transportada e custos. Por ser um líquido à temperatura ambiente, é relativamente muito fácil de armazenar e transportar. O metanol tem capacidade de armazenar 12,5% em peso de hidrogênio o equivalente a 99 Kg/m3.
+
+Metanol pode ser produzido a partir da hidrogenação do $CO_2$ \@ref(eq:equacao7), utilizando catalisadores sólidos ($Cu$/$ZnO$/$Al_2O_3$) em temperaturas entre 220 e 280 °C.
+
+\begin{equation}
+CO_2 + 3H_2 \rightarrow CH_3OH + H_2O
+(\#eq:equacao7)
+\end{equation}
+
+A hidrogenação do $CO_2$ para $CH_3OH$ e a desidrogenação do $CH_3OH$ para $H_2$ e $CO_2$ constituem um ciclo de “carbono neutro” para armazenamento e liberação de $H_2$.
+
+A liberação do hidrogênio do metanol pode ser realizada pela reforma a vapor, por oxidação parcial, decomposição do metanol e reforma a vapor oxidativa [18, 57]. Algumas rotas de desidrogenação:
+
+- Reforma a vapor com água, utilizando CuO/ZnO-catalisadores \@ref(eq:equacao8).
+
+\begin{equation}
+CH_3OH + H_2O \rightarrow CO_2 + H_2
+(\#eq:equacao8)
+\end{equation}
+
+- Oxidação parcial \@ref(eq:equacao9).
+
+\begin{equation}
+CH_3OH + \frac{1}{2}H_2O \rightarrow CO_2 + 2H_2
+(\#eq:equacao9)
+\end{equation}
+
+O Processo de reforma a vapor, é o único que possibilita a liberação de três, em vez de dois mols de hidrogênio, por mol de metanol. A reforma a vapor do metanol é realizada em baixas temperaturas em torno de 200 oC e 300 oC e geralmente são usados catalisadores à base de $Cu$. Deve-se salientar que algumas reações químicas secundárias também podem ocorrer simultaneamente e formar subprodutos indesejáveis, como $CO$, $CO_2$, $CH_4$ e carbono os quais também podem ser gerados em função do catalisador utilizado [57, 58].
+
+O processo cíclico de síntese de CH3OH com $CO_2$/$H_2$ e desidrogenação de $CH_3OH$ para produzir $H_2$/$CO_2$ é um sistema de armazenamento de $H_2$ muito promissor e um método viável para a utilização de $CO_2$, o que poderia auxiliar nos problemas energéticos e ambientais [59].
+
+#### Líquidos orgânicos carreadores de H₂ (LOHC)
+
+Os Líquidos Orgânicos Carreadores de Hidrogênio (LOHCs), representam uma abordagem inovadora para o armazenamento e transporte de hidrogênio. São compostos orgânicos que podem absorver e liberar hidrogênio através de reações químicas reversíveis de hidrogenação e desidrogenação. A principal atratividade dos LOHCs está na sua capacidade de armazenar hidrogênio em um estado líquido em condições ambientais de pressão e temperatura, o que também permite a utilização da infraestrutura existente para combustíveis líquidos. Isso elimina a necessidade de alta pressão ou criogenia, tornando o transporte de hidrogênio mais seguro e economicamente viável em comparação com o hidrogênio gasoso comprimido ou hidrogênio líquido. Outra vantagem é que nestes processos não há a formação de $CO_2$ ou $N_2$, portanto não há a necessidade de capturar e/ou armazenar estes gases [60].
+
+Uma desvantagem desse tipo de armazenamento é a necessidade de utilização de altas temperaturas e catalisadores de metais nobres de altos custo como $Rh$, $Ru$, $Pt$ e $Pd$, os quais estão diretamente relacionados com a quantidade e a cinética das reações de hidrogenação e desidrogenação e também possível formação de compostos indesejáveis. Adicionalmente, a desidrogenação de muitos cicloalcanos ou compostos aromáticos apresenta uma cinética muito difícil, necessitando de catalisadores altamente ativos e altas temperaturas que podem também afetar a pureza do gás hidrogênio que prejudica a vida útil das células de combustível do tipo PEM [60]. 
+
+O funcionamento dos LOHCs baseia-se em um ciclo reversível de reações químicas de hidrogenação e desidrogenação. Na etapa de hidrogenação, o $H_2$ gasoso reage com a molécula orgânica (que pode se um hidrocarboneto) na presença de um catalisador (exemplo $P_t$) formando um composto orgânico rico em hidrogênio, a reação é exotérmica e ao final desta etapa o composto pode ser transportado para o local de uso. Já no local de uso, o composto é aquecido, também na presença do catalisador para a liberação do $H_2$, neste processo a reação é endotérmica. A molécula orgânica agora desidrogenada, retorna para o local de produção de hidrogênio para ser recarregada, fechando o ciclo dos LOHCs [18].
+
+```{r figura12, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap="Exemplos de conversões de LOHC. Fonte: [18]."}
+
+knitr::include_graphics(path = 'figura12.png')
+
+```
+
+Os LOHCs que apresentam maior potencial para o armazenamento de hidrogênio são os compostos aromáticos, dibenziltolueno (DBT) com 6,2% em peso, o equivalente a 64kg/m3; o metilciclohexano e tolueno (MCH-TOL) com 6,1% em peso, o equivalente a 47 kg/m3 e N-etilcarbazol e dodecahidro-Nethylcarbazol (NEC-DNEC) com 5,8% em peso, o equivalente a 54 kg/m3, entre outros. Entre estes, o sistema DBT é altamente favorecido devido às suas excelentes propriedades, boa estabilidade térmica, alto ponto de ebulição (380oC), baixo ponto de fusão (90oC) e alta capacidade gravimétrica de armazenamento de hidrogênio, na sua forma hidrogenada, tem propriedades físicas semelhantes ao óleo diesel, facilitando seu transporte [1, 61, 62].
+
+Os LOHCs têm a vantagem de exigir menos energia para seu processo de hidrogenação e desidrogenação do que outras opções, como o metanol e a amônia. Por exemplo, o tolueno e o metilcicloexano podem ser convertidos em um processo de hidrogenação a uma temperatura de 350 °C. Enquanto o DBT (dibenziltolueno) e o perhidro-dibenziltolueno podem ser trabalhados a 150°C com a presença de um catalisador. Isso representa uma redução significativa de temperatura e, consequentemente, de energia necessária para a conversão [18].
+
+Apesar de haver técnicas bastante consolidadas para o armazenamento de hidrogênio, ainda não existe uma tecnologia de armazenamento que seja totalmente segura e econômica. Na sua forma pura, o hidrogênio líquido alcança altas densidades à pressão atmosférica, mas o seu armazenamento ainda é um grande desafio devido à dificuldade e custos envolvidos em sua liquefação. No estado gasoso apresenta baixa densidade volumétrica de armazenamento de hidrogênio, mesmo para uma alta pressão de 700 bar. Adicionalmente necessita de materiais que não sejam degradados pelo hidrogênio e suportem as altas pressões. No estado gasoso o transporte do hidrogênio por gasodutos se mostra uma técnica viável economicamente.
+
+Na forma de hidretos ou adsorvidos em materiais com alta área específica, o armazenamento de hidrogênio alcança resultados satisfatórios, mas parâmetros como disponibilidade e custo dos materiais utilizados, temperaturas de hidrogenação e desidrogenação e a cinética das reações envolvidas são questões ainda prioritárias para determinar a viabilidade do uso destes materiais. Quando ligado quimicamente, a amônia verde é a que apresenta a forma mais promissora para o armazenamento e transporte do hidrogênio, pois tem altas densidades de armazenamento, sua síntese, manuseio e transporte são muito seguras e muito bem estabelecidas.
 
 
 

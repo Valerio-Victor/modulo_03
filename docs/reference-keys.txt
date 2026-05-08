@@ -13,6 +13,12 @@ eq:equacao3
 eq:equacao4
 fig:figura10
 fig:figura11
+eq:equacao5
+eq:equacao6
+eq:equacao7
+eq:equacao8
+eq:equacao9
+fig:figura12
 introdução
 armazenamento-de-hidrogênio
 armazenamento-físico-do-hidrogênio
@@ -27,3 +33,6 @@ hidretos-binários-binary-hydrides
 hidretos-intermetálicos
 hidretos-complexos
 armazenamento-de-hidrogênio-em-hidretos-químicos-no-estado-líquido
+amônia
+metanol
+líquidos-orgânicos-carreadores-de-h₂-lohc
