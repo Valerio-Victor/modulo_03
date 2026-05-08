@@ -177,91 +177,134 @@ Adicionalmente possui algumas vantagens sobre os potenciais armazenadores de hid
 
 ### Armazenamento químico do hidrogênio
 
+O armazenamento de hidrogênio em estado sólido representa uma abordagem promissora para superar os desafios em aumentar a densidade volumétrica e segurança associados ao hidrogênio gasoso comprimido ($CGH_2$) e ao hidrogênio líquido ($LH_2$). Esta tecnologia se baseia na interação do hidrogênio com materiais sólidos por meio de reações químicas, permitindo o armazenamento de grandes quantidades de hidrogênio em condições mais brandas de pressão e temperatura. Neste contexto os hidretos metálicos se apresentam como uma das tecnologias mais estudadas e atrativas para armazenamento de hidrogênio em estado sólido devido à sua alta densidade volumétrica e segurança intrínseca (Tabela \@ref(tab:tabela1)), além disso esses sistemas não sofrem com problemas de perda ou queda de pressão, possibilitando uma maior autonomia. 
 
+Os hidretos metálicos são uma classe de materiais que têm sido extensivamente estudada para aplicações no armazenamento de hidrogênio, pois possuem alta capacidade de absorver e liberar grandes volumes de hidrogênio de forma reversível. Nesses materiais, o hidrogênio não é armazenado na forma gasoso ou líquida, mas sim quimicamente ligado à estrutura cristalina do metal ou da liga metálica. Este processo é análogo ao de uma esponja que absorve água, mas em um nível atômico, onde o hidrogênio se dissocia e se incorpora na rede do metal [42, 43].
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# BASE
-
-
-
-
-
-
-
- Tabela \@ref(tab:tabela1).
-
-```{r tabela1, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Características técnicas de tecnologias de típicas de eletrólise de água. Fonte: [6]"}
+```{r tabela1, echo=FALSE, message=FALSE, warning=FALSE, tab.cap="Segurança comparativa: Hidreto metálico versus gás comprimido e hidrogênio líquido. Fonte: [44]"}
 library(magrittr, include.only = '%>%')
 library(gt)
 
-# param_tec <- readxl::read_xlsx(path = 'tabelas.xlsx',
-#                                sheet = 1) 
-# 
-# param_tec %>%
-#   gt(caption = 'Características técnicas de tecnologias de típicas de eletrólise de água. Fonte: [6]') %>%
-#   tab_style(
-#     style = list(
-#       cell_fill(color = "#2e7d32"),
-#       cell_text(color = "#e8f5e9", weight = "bold")
-#     ),
-#     locations = cells_column_labels()
-#   ) %>% 
-#   cols_align(
-#   align = "center",
-#   columns = everything()
-# )
+param_tec <- data.frame(
+  fator = c('Pressão de Armazenamento',
+            'Riscos Térmicos',
+            'Modo de Falha'),
+  hidreto_metalico = c('110 bar',
+                       'Mínimo (resfriamento passivo)',
+                       'Desorção lenta de Hidrogênio'),
+  gas_comprimido = c('350700 bar',
+                     'Alto (ciclo de pressão)',
+                     'Explosão instantânea'),
+  hidrogenio_liquido = c('620 bar',
+                         'Extremo (-253oC)',
+                         'Detonação por mudança rápida de fase')
+)
+
+param_tec %>%
+  gt(caption = 'Segurança comparativa: Hidreto metálico versus gás comprimido e hidrogênio líquido. Fonte: [44]') %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#2e7d32"),
+      cell_text(color = "#e8f5e9", weight = "bold")
+    ),
+    locations = cells_column_labels()
+  ) %>%
+  cols_label(
+    fator = 'Fator',
+    hidreto_metalico = 'Hidreto Metálico',
+    gas_comprimido = 'Gás Comprimido',
+    hidrogenio_liquido = 'Hidrogênio Líquido'
+  ) %>%
+  cols_align(
+  align = "center",
+  columns = everything()
+)
 
 
 ```
+
+#### Armazenamento de hidrogênio em hidretos metálicos
+
+Hidretos metálicos são substâncias sólidas formadas pela ligação química do hidrogênio com um metal, quando submetido a condições de temperaturas e pressões adequadas, o $H_2$ se torna sólido dentro da matriz metálica e esse processo pode ser revertido para a liberação do hidrogênio. A grande vantagem está relacionada ao transporte e armazenamento de $H_2$ em estruturas com diferentes geometrias.
+
+O armazenamento de $H_2$ na forma de hidreto metálico acontece através do fenômeno de quimissorção, onde a molécula de hidrogênio interage com o metal ou liga metálica através de ligações fortes. O processo é reversível e pode ser representado pelas reações representadas em \@ref(eq:equacao3) e \@ref(eq:equacao4) [45]
+
+\begin{equation}
+M(s) + \frac{x}{2} H_2(g) \xrightarrow[\text{adsorção}]{} HM_x(s) + \text{calor}
+(\#eq:equacao3)
+\end{equation}
+
+\begin{equation}
+M(s) + \frac{x}{2} H_2(g) \xleftarrow[\text{dessorção}]{} HM_x(s) + \text{calor}
+(\#eq:equacao4)
+\end{equation}
+
+Onde: $M(s)$ é o metal ou liga metálica sólida, $H_2(g)$ é a molécula de hidrogênio gasoso e $HM_x(s)$ é o hidreto metálico sólido.
+
+No processo de formação do hidreto metálico, inicialmente o hidrogênio é adsorvido na superfície do metal e é permeado para a estrutura cristalina metálica, aonde fica quimicamente ligado ao metal, através de fortes ligações, sendo este um processo exotérmico, portanto, ocorre a liberação de calor. Após o seu aprisionamento, o hidreto pode ser transportado até o local de liberação do hidrogênio. Já na etapa de liberação do gás, ocorre o fenômeno de dessorção, onde os átomos de hidrogênio migram para a superfície do metal e se desprendem como gás hidrogênio ($H_2$), sendo expulso enquanto os átomos metálicos se reorganizam para voltar a estrutura cristalina original. Esta etapa de liberação só ocorre através do fornecimento de energia, por meio de aquecimento (termólise), permitindo assim que o gás $H_2$ possa ser utilizado em aplicações estacionárias, como célula combustível [45].
+
+Existem outras rotas de liberação do $H_2$ gasoso, como por exemplo a reação entre o hidreto e a água (hidrólise), porém é bem específica, sendo utilizada para o borohidreto de sódio ($NaBH_4$). Essa rota pode ocorrer em temperatura ambiente, porém o hidreto só pode ser utilizado uma única vez. A Figura \@ref(fig:figura10) mostra um desenho esquemático da formação de hidreto metálico.
+
+```{r figura10, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap="Absorção e Dessorção de H₂ na formação de hidreto metálico. Fonte: [46]."}
+
+knitr::include_graphics(path = 'figura10.png')
+
+```
+
+Várias ligas podem ser utilizadas para o armazenamento do hidrogênio, ligas à base de $Mg$, $Al$, borohidretos alanatos hidretos metálicos, hidretos complexos entre outras. Entretanto, a viabilidade de uso dessas ligas vai depender de parâmetros como temperaturas de hidrogenação e desidrogenação, da cinética dessas reações, reatividade e reversibilidade além de características como custo, densidade, resistência à oxidação e disponibilidade de cada elemento [1, 47, 48]. A classificação dos hidretos metálicos é baseada principalmente na sua estrutura e no mecanismo de ligação.
+
+#### Hidretos binários (binary hydrides)
+
+Os hidretos binários são formados por apenas dois elementos: um metal ($M$) e o hidrogênio ($H$). Os metais têm grande afinidade com o $H_2$ sendo capazes de armazenar uma grande quantidade do gás. A natureza da ligação $M$-$H_2$,  define suas propriedades:
+
+- **Hidretos Iônicos (ou Salinos)**: Formados por metais alcalinos (Grupo 1) e alcalino-terrosos (Grupo 2). O hidrogênio se comporta como um ânion ($H^-$). São altamente reativos com a água, liberando $H_2$.
+Exemplo: Hidreto de Sódio ($NaH$), Hidreto de Cálcio ($CaH$).
+
+- **Hidretos Metálicos (ou Intersticiais)**: Formados por metais de transição (bloco d e f). O hidrogênio ocupa os sítios intersticiais da rede cristalina do metal. O Paládio ($PdH$) é o exemplo mais estudado, conhecido por sua alta capacidade de absorção e cinética rápida [49]. 
+
+- **Hidreto de Magnésio (MgH2)**: É um dos mais promissores para armazenamento de hidrogênio devido à sua alta capacidade gravimétrica, cerca de 7,6% em peso de H2 e baixo custo, No entanto, as ligações $Mg$-$H_2$ são mais fortes, assim devido a sua alta estabilidade termodinâmica, faz-se necessário o uso temperaturas superiores à 300°C para a etapa de dessorção, isso faz com que o processo seja cineticamente lento, o que pode ser tornar  ineficiente para muitas aplicações [45].
+
+- **Hidreto de Alumínio (AlH2)**: Diferentemente do hidreto de $Mg$, ele possui uma baixa entalpia de reação, necessitando de uma temperatura de dessorção mais baixa, cerca de 100°C, além disso, tem uma capacidade de armazenamento de $H_2$ relativamente alta, em torno de 10,1% em peso de hidrogênio [18, 49].
+
+Algumas mudanças no processo de produção das ligas metálicas, a adição de elementos de liga e até mesmo alteração no tamanho das partículas podem alterar as temperaturas e cinéticas das reações dos hidretos metálicos, por exemplo, a adição de $Ni$ ao $Mg$, reduz a temperatura de liberação de hidrogênio de 300 °C para 250 °C [50].
+
+#### Hidretos intermetálicos
+
+Os hidretos intermetálicos são formados pela reação química entre a molécula do $H_2$ com compostos intermetálicos, neste caso, a presença de dois ou mais metais melhoram as propriedades termodinâmicas e cinéticas dos hidretos, melhorando também a capacidade de armazenamento de hidrogênio. Os hidretos intermetálicos podem ser representados pela fórmula química $A_xB_yH_z$ (A-metais alcalinos com maior afinidade com $H_2$; B-metais de transição com baixa afinidade com $H_2$; H-hidrogênio). Neste contexto os hidretos oferecem uma grande versatilidade em termos de composições estequiométricas para melhorar a capacidade de absorção do gás.
+
+Apesar destes materiais possuírem uma tecnologia já implementada comercialmente, a sua densidade gravimétrica acaba sendo limitada pelo peso molecular dos metais de transição. Pesquisas mais recentes vêm trabalhando na substituição de elementos pesados por elementos mais leves, proporcionando um aumento na capacidade gravimétrica destes hidretos. [51].
+
+Ligas como $LaNi_5H_6$ são bastante utilizadas em baterias Niquel-Hidreto Metálico, por possuir estabilidade cíclica e trabalhar próximo à temperatura ambiente. Já a liga $TiFeH_2$, tem baixo custo e alta densidade gravimétrica (1,9 MJ/kh). Outra liga utilizada em sistema de armazenamento estacionário, por possuir alta densidade volumétrica é $TiMn_2H_3$. Estes tipos de hidretos metálicos são mais adequados para aplicações em pequena escala, devido à cinética de hidrogenação e desidrogenação, que ainda é relativamente lenta e ainda exige bastante estudo para melhorar o seu uso [18, 51].
+
+#### Hidretos complexos
+
+Os hidretos complexos são formados pela ligação do hidrogênio com um ânion complexo e estabilizado com um metal, como por exemplo Boro ou Alumínio. A fórmula química é $M(XH_n)_m$, sendo: $M$ o metal leve e $XH_n$ o ânion. Os principais grupos de hidretos complexo são os alanatos $[AlH_x]^-$, borohidretos $[BH_x]^-$, e as amidas $[NH_2]^-$. Dentre eles, o hidreto de alumínio ($AlH_4$), hidreto de boro ($BH_4$) e Amidas ($NH_2$), são os mais promissores, já para os metais leves, destacam-se o lítio ($Li$) e o sódio ($Na$) devido as suas baixas entalpias de formação [49]. 
+
+Os alanatos são bastante promissores, pois apresentam alta viabilidade nos processos de hidrogenação e desidrogenação com baixas pressões e baixas temperaturas, o destaque é para o $NaAlH_4$ (alanato de sódio), o qual pode ser dopado com outros elementos para aumentar a sua capacidade de armazenamento de $H_2$ [18].
+
+Dentre os borohidretos pode-se destacar o $LiBH_4$, a sua grande vantagem é maior densidade gravimétrica de hidrogênio, cerca de 18,5% em peso. No entanto, eles são termodinamicamente muito estáveis, necessitando de temperaturas de dessorção acima de 400°C, além de pressões de re-hidrogenação elevadas, o que torna o processo bem desafiador técnica e economicamente [52]. 
+
+As amidas são compostos formados pela união com um hidreto metálico elementar, por exemplo $LiNH_2$, esta formação é essencial para que a amida não libere amônia ($NH_3$) em vez de hidrogênio ($H_2$), o que impediria seu uso em células combustíveis.
+
+### Armazenamento de hidrogênio em hidretos químicos no estado líquido
+
+Os hidretos químicos no estado líquido (Figura \@ref(fig:figura11)), podem armazenar e/ou transportar o hidrogênio em sua forma ligada, ou seja, na forma de outros compostos como amônia, metanol ou LOHCs (líquidos orgânicos transportadores de hidrogênio) que, normalmente são líquidos em condições normais de temperatura e pressão. Estes hidretos, são de fácil manuseio e grande parte da infraestrutura necessária para sua produção e transporte já está instalada, tornando essa alternativa uma das mais promissoras para o armazenamento de longa duração e transporte do hidrogênio em longas distâncias, permitindo o comércio global desse gás de forma relativamente econômica e segura. 
+
+
+```{r figura11, echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.align='center', fig.cap="Exemplos ilustrativos de hidretos químicos. Fonte: [18]."}
+
+knitr::include_graphics(path = 'figura11.png')
+
+```
+
+
+
+
+
+
+
+
+
 
 # REFERÊNCIAS {-}
 

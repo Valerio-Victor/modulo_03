@@ -8,6 +8,11 @@ fig:figura5
 fig:figura6
 fig:figura7
 fig:figura8
+tab:tabela1
+eq:equacao3
+eq:equacao4
+fig:figura10
+fig:figura11
 introdução
 armazenamento-de-hidrogênio
 armazenamento-físico-do-hidrogênio
@@ -17,4 +22,8 @@ princípios-da-compressão-de-gases-leis-dos-gases-ideais-e-reais
 tipos-de-armazenamento-de-h₂-gasoso
 armazenamento-de-hidrogênio-adsorvido
 armazenamento-químico-do-hidrogênio
-base
+armazenamento-de-hidrogênio-em-hidretos-metálicos
+hidretos-binários-binary-hydrides
+hidretos-intermetálicos
+hidretos-complexos
+armazenamento-de-hidrogênio-em-hidretos-químicos-no-estado-líquido
